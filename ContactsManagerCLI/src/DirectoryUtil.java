@@ -6,9 +6,6 @@ import java.nio.file.Paths;
 public class DirectoryUtil {
 
 
-
-
-
     public static Path getPath(String parentDirectory, String childDirectory, String fileName) {
         return Paths.get(parentDirectory, childDirectory, fileName);
     }
