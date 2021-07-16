@@ -72,5 +72,22 @@ public class ContactsManagerAPP {
 
     }
 
+    public static void continueOrExit() throws IOException {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Would you like to continue? (y/n): ");
+
+        String answer = scanner.nextLine();
+
+        if(answer.equalsIgnoreCase("y")){
+            init();
+        } else {
+            System.out.println("Smell ya later!\n");
+            System.exit(0);
+        }
+
+    }
+
 
 }
