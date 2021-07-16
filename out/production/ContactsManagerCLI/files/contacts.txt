@@ -1,10 +1,9 @@
-Park Ji Soo 1111111111
-Im Na Yeon  2222222222
-Yoo Kyung Wan 3333333333
-Hirai Momo  4444444444
-Minatozaki Sana 5555555555
-Myoui Mina  6666666666
-Kim Da Hyun 7777777777
-Son Chae Young 8888888888
-Chou Tzu Yu  9999999999
-Amado Azua | 123456789
+Park Ji Soo     |   1111111111
+Im Na Yeon      |   2222222222
+Yoo Kyung Wan   |   3333333333
+Hirai Momo      |   4444444444
+Minatozaki Sana |   5555555555
+Myoui Mina      |   6666666666
+Kim Da Hyun     |   7777777777
+Son Chae Young  |   8888888888
+Chou Tzu Yu     |   9999999999
