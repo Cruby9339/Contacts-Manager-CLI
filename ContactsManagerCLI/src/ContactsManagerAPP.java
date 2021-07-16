@@ -7,14 +7,9 @@ public class ContactsManagerAPP {
 
     public static void main(String[] args) throws IOException {
 
-
-
         init();
 
-
     }
-
-
 
     public static void init() throws IOException {
 
@@ -63,6 +58,8 @@ public class ContactsManagerAPP {
                 System.out.println("T H R E E");
             } else if (choice == 4) {
                 // delete method
+                ContactsUtil.deleteContact(path);
+
                 System.out.println("4");
             } else if (choice == 5) {
                 // exit method
