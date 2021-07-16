@@ -32,8 +32,6 @@ public class ContactsManagerAPP {
             System.out.print("Enter an option (1, 2, 3, 4, or 5): ");
             int userChoice = scanner.nextInt();
 
-//            System.out.println(userChoice);
-
             menuDirection(userChoice, path);
 
         } catch(InputMismatchException e){
