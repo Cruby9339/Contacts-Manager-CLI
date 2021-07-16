@@ -37,7 +37,7 @@ public class ContactsManagerAPP {
             System.out.print("Enter an option (1, 2, 3, 4, or 5): ");
             int userChoice = scanner.nextInt();
 
-            System.out.println(userChoice);
+//            System.out.println(userChoice);
 
             menuDirection(userChoice, path);
 
@@ -53,18 +53,22 @@ public class ContactsManagerAPP {
 
             if (choice == 1) {
                 //view method
-                System.out.println("hello from 1");
+                ContactsUtil.tryPrintContents(path);
             } else if (choice == 2) {
+                //add new contact method
                 ContactsUtil.addContact(path);
             } else if (choice == 3) {
                 // search by contact method
+
                 System.out.println("T H R E E");
             } else if (choice == 4) {
                 // delete method
                 System.out.println("4");
             } else if (choice == 5) {
                 // exit method
-                System.out.println("F5ve");
+                System.out.println("\n\nSayonara!");
+                System.exit(0);
+
             } else {
                 System.out.println("Invalid input! Please select a valid number.");
                 menuPrompt(path);
