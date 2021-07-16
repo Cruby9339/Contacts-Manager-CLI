@@ -2,12 +2,16 @@ public class Contacts {
 
     private String firstName;
     private String lastName;
-    private double phoneNumber;
+    private int phoneNumber;
 
-    public Contacts(String firstName, String lastName, double phoneNumber) {
+    public Contacts(String firstName, String lastName, int phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+    }
+
+    public Contacts() {
+
     }
 
     public String contactsToString(){
