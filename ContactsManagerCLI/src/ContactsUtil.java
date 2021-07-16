@@ -62,8 +62,30 @@ public class ContactsUtil {
             System.out.println("User/Phone number does not exist");
         }
 
+    }
+
+    public static void searchContact(Path path){
+
+        try{
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a name or number to search");
+            String contactToFind = sc.nextLine();
+            Path pathToFile = Paths.get("ContactsManagerCLI", "src", "files", "contacts.txt");
+            List<String> contactList;
+            contactList = Files.readAllLines(pathToFile);
+            for(String contact : contactList){
+                if(contact.contains(contactToFind)){
+                    System.out.println("Contact: " + contact);
+                }
+            }
+        }catch(IOException e){
+            System.out.println("Could not find user using those values");
+        }
 
     }
+
+
+
 
     public static List<String> readFromFile(Path path) throws IOException {
 

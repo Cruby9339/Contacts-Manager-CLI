@@ -54,6 +54,7 @@ public class ContactsManagerAPP {
                 ContactsUtil.addContact(path);
             } else if (choice == 3) {
                 // search by contact method
+                ContactsUtil.searchContact(path);
                 System.out.println("T H R E E");
             } else if (choice == 4) {
                 // delete method
