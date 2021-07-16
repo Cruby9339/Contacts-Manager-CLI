@@ -54,12 +54,10 @@ public class ContactsManagerAPP {
                 ContactsUtil.addContact(path);
             } else if (choice == 3) {
                 // search by contact method
-
                 System.out.println("T H R E E");
             } else if (choice == 4) {
                 // delete method
                 ContactsUtil.deleteContact(path);
-
                 System.out.println("4");
             } else if (choice == 5) {
                 // exit method
