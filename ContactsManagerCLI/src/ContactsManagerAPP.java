@@ -1,31 +1,31 @@
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ContactsManagerAPP {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 
 
         init();
 
 
-        menuPrompt();
-
     }
 
 
 
-    public static void init(){
+    public static void init() throws IOException {
 
         Path path = DirectoryUtil.getPath("src", "files", "contacts.txt");
         DirectoryUtil.tryCreateDir(DirectoryUtil.getPath("src", "files", "contacts.txt"));
 
+        menuPrompt(path);
 
     }
 
-    public static void menuPrompt(){
+    public static void menuPrompt(Path path)throws IOException{
 
         Scanner scanner = new Scanner(System.in);
         try {
@@ -39,23 +39,23 @@ public class ContactsManagerAPP {
 
             System.out.println(userChoice);
 
-            menuDirection(userChoice);
+            menuDirection(userChoice, path);
 
         } catch(InputMismatchException e){
             System.out.println("Invalid input\n\n");
-            menuPrompt();
+            e.printStackTrace();
+            menuPrompt(path);
         }
 
     }
 
-    public static void menuDirection (int choice){
+    public static void menuDirection (int choice, Path path) throws IOException {
 
             if (choice == 1) {
                 //view method
                 System.out.println("hello from 1");
             } else if (choice == 2) {
-                // add a new contact method
-                System.out.println("TWO");
+                ContactsUtil.addContact(ContactsUtil.getContent(), path);
             } else if (choice == 3) {
                 // search by contact method
                 System.out.println("T H R E E");
@@ -67,7 +67,7 @@ public class ContactsManagerAPP {
                 System.out.println("F5ve");
             } else {
                 System.out.println("Invalid input! Please select a valid number.");
-                menuPrompt();
+                menuPrompt(path);
             }
 
     }
