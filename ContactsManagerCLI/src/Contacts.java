@@ -10,9 +10,7 @@ public class Contacts {
         this.phoneNumber = phoneNumber;
     }
 
-    public Contacts() {
-
-    }
+    public Contacts() {}
 
     public String contactsToString(){
         return this.firstName + "" + this.lastName + " " +  "Phone number: " + this.phoneNumber;
