@@ -55,7 +55,7 @@ public class ContactsManagerAPP {
                 //view method
                 System.out.println("hello from 1");
             } else if (choice == 2) {
-                ContactsUtil.addContact(ContactsUtil.getContent(), path);
+                ContactsUtil.addContact(path);
             } else if (choice == 3) {
                 // search by contact method
                 System.out.println("T H R E E");
