@@ -21,15 +21,19 @@ public class ContactsUtil {
             Path pathToFile = Paths.get("ContactsManagerCLI", "src", "files", "contacts.txt");
             Scanner sc = new Scanner(System.in);
             System.out.println("You have selected: Add a new contact");
-            System.out.println("First name: ");
+            System.out.print("First name: ");
             String firstName = sc.nextLine();
-            System.out.println("Last name: ");
+            System.out.print("Last name: ");
             String lastName = sc.nextLine();
-            System.out.println("Phone Number: ");
+            System.out.print("Phone Number: ");
             int phoneNumber = sc.nextInt();
             Files.write(pathToFile, Collections.singletonList(firstName + " " + lastName + "\t\t|\t" + phoneNumber), StandardOpenOption.APPEND);
             getContent().add(new Contacts(firstName, lastName, phoneNumber) + "\n");
             System.out.println(firstName + " " + lastName + " has been successfully added to contacts");
+
+            // looping application
+            ContactsManagerAPP.continueOrExit();
+
         } catch (InputMismatchException | IOException e) {
             System.out.println("Could not write to file at: " + path.toAbsolutePath());
         }
@@ -48,7 +52,7 @@ public class ContactsUtil {
             ContactList = Files.readAllLines(pathToFile);
             List<String> newContactList = new ArrayList<>();
             for (String person : ContactList) {
-                if (person.contains(contactToDelete)) {
+                if (person.toLowerCase().contains(contactToDelete)) {
                     continue;
                 }
                 newContactList.add(person);
@@ -57,6 +61,9 @@ public class ContactsUtil {
                 System.out.println(contact);
             }
             Files.write(pathToFile, newContactList);
+
+            // looping application
+            ContactsManagerAPP.continueOrExit();
 
         } catch (IOException e) {
             System.out.println("User/Phone number does not exist");
@@ -68,24 +75,25 @@ public class ContactsUtil {
 
         try{
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter a name or number to search");
+            System.out.print("Enter a name or number to search");
             String contactToFind = sc.nextLine();
             Path pathToFile = Paths.get("ContactsManagerCLI", "src", "files", "contacts.txt");
             List<String> contactList;
             contactList = Files.readAllLines(pathToFile);
             for(String contact : contactList){
-                if(contact.contains(contactToFind)){
+                if(contact.toLowerCase().contains(contactToFind)){
                     System.out.println("Contact: " + contact);
                 }
             }
+
+            // looping application
+            ContactsManagerAPP.continueOrExit();
+
         }catch(IOException e){
             System.out.println("Could not find user using those values");
         }
 
     }
-
-
-
 
     public static List<String> readFromFile(Path path) throws IOException {
 
@@ -104,7 +112,7 @@ public class ContactsUtil {
 
     }
 
-    public static void printList(List<String> strings) {
+    public static void printList(List<String> strings) throws IOException {
 
         System.out.println("Name            |   Phone number");
         System.out.println("------------------------------------");
@@ -112,6 +120,10 @@ public class ContactsUtil {
         for (String line : strings) {
             System.out.println(line);
         }
+
+        System.out.println("\n");
+        // looping application
+        ContactsManagerAPP.continueOrExit();
 
     }
 
