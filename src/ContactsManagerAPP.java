@@ -100,8 +100,9 @@ public class ContactsManagerAPP {
             continueOrExit();
         }
 
-//        System.out.println("Something bad happened Chief");
+        System.out.println("Something bad happened Chief");
         return false;
+
     }
 
 
