@@ -41,11 +41,8 @@ public class ContactsUtil {
             System.out.print("Phone Number: ");
             String phoneNumber = sc.nextLine();
             List<Contacts> contactsList = getContent(path);
-            contactsList.add(new Contacts(firstName + " " +lastName + "\t", "\t   " + phoneNumber));
+            contactsList.add(new Contacts(firstName + " " +lastName + "\t\t", "\t   " + phoneNumber));
 
-            // to Files.write();
-
-//            stringContent(contactsList);
             Files.write(path, stringContent(contactsList));
 
             System.out.println(firstName + " " + lastName + " has been successfully added to contacts");
@@ -61,7 +58,7 @@ public class ContactsUtil {
         try {
             Scanner sc = new Scanner(System.in);
             System.out.print("Contact to delete (Full name or Phone number): ");
-            String contactToDelete = sc.nextLine();
+            String contactToDelete = sc.nextLine().toLowerCase();
 
             List<String> ContactList;
             ContactList = Files.readAllLines(path);
